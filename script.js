@@ -9,6 +9,7 @@ let backspace = document.querySelector("#backspace");
 let decimal = document.querySelector("#decimal");
 let operators = document.querySelectorAll("#plus,#minus,#multiply,#divide");
 let equals = document.querySelector("#equals");
+let sign = document.querySelector("#sign");
 
 /* important variables */
 let content="";
@@ -164,4 +165,11 @@ equals.addEventListener("click", e => {
     lowerScreen.textContent = result;
 })
 
+/* input rules for sign */
+
+sign.addEventListener("click",e => {
+    if(lowerScreen.textContent != ""){
+        lowerScreen.textContent = (Number(lowerScreen.textContent)*(-1)).toFixed(2);
+    }
+})
 
